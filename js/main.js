@@ -65,3 +65,18 @@ document.addEventListener("DOMContentLoaded", () => {
     // Iniciar la animación de forma fluida
     requestAnimationFrame(animateTicker);
 });
+
+
+window.addEventListener('scroll', () => {
+    const logo = document.querySelector('.js-rotate-logo');
+    if (!logo) return;
+
+    // Obtiene la posición actual del scroll
+    const scrollPosition = window.scrollY;
+    
+    // Multiplica por una velocidad (0.25 para un giro suave, auméntalo si quieres que gire más rápido)
+    const rotationDegree = scrollPosition * 0.25; 
+
+    // Aplica la rotación en 2D al logo
+    logo.style.transform = `rotate(${rotationDegree}deg)`;
+});
