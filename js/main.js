@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         originalWidth += track.children[i].offsetWidth + 30; // 30 es el gap en px
     }
 
-    let speed = 0.5; // Velocidad del ticker (puedes subir a 1.5 o 2 si lo quieres más rápido)
+    let speed = 1.5; // Velocidad del ticker (puedes subir a 1.5 o 2 si lo quieres más rápido)
     let position = 0;
 
     function animateTicker() {
@@ -80,3 +80,19 @@ window.addEventListener('scroll', () => {
     // Aplica la rotación en 2D al logo
     logo.style.transform = `rotate(${rotationDegree}deg)`;
 });
+
+
+// Seleccionamos la imagen por su ID
+    const logoRodante = document.getElementById('logo-rodante');
+
+    // Escuchamos el evento de scroll en la ventana
+    window.addEventListener('scroll', () => {
+        // Obtenemos la cantidad de píxeles desplazados verticalmente
+        const scrollActual = window.scrollY;
+        
+        // Multiplicamos por 0.4 para darle una velocidad de giro fluida
+        const grados = scrollActual * 0.4;
+        
+        // Aplicamos la rotación
+        logoRodante.style.transform = `rotate(${grados}deg)`;
+    });
