@@ -2,10 +2,12 @@
 
 :root{
     --ink:#11120f;
+    --white: #ffffff;
     --paper:#f4f4ef;
     --white:#ffffff;
     --muted:#66675f;
     --lime:#eaff42;
+    --yellow: #fac600;
     --violet:#c4b6ff;
     --orange:#ff7a3d;
     --red:#ff5353;
@@ -50,9 +52,41 @@ button{font:inherit}
 }
 .logo{margin-right:auto}
 .logo img{height:52px;width:auto}
-.nav{display:flex;gap:30px}
-.nav a{font-size:.95rem;font-weight:600}
-.nav a:hover{opacity:.55}
+.nav {
+    display: flex;
+    gap: 20px;
+}
+.nav a {
+    position: relative;
+    font-size: .95rem;
+    font-weight: 600;
+    color: #111;
+    text-decoration: none;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--red, #ff0000);
+    transition: width 0.3s ease;
+}
+.nav a:hover::after {
+    width: 100%;
+}
+.nav a:active::after {
+    width: 100%;
+}
+.nav a.active {
+    color: var(--red, #ff0000); 
+}
+.nav a.active::after {
+    width: 100%;
+}
 .header__cta{
     display:inline-flex;
     align-items:center;
@@ -60,8 +94,8 @@ button{font:inherit}
     min-height:50px;
     padding:0 20px;
     border-radius:999px;
-    color:#fff;
-    background:var(--ink);
+    color: var(--ink);
+    background:var(--yellow);
     font-weight:700;
 }
 .menu-button{display:none;border:0;background:transparent}
@@ -91,7 +125,25 @@ button{font:inherit}
     text-transform:uppercase;
 }
 .eyebrow--dark{color:var(--ink)}
-.eyebrow--light{color:var(--lime)}
+.eyebrow--light{color:var(--white)}
+.audience__copy .eyebrow{color: white;}
+.audience_bl{color: var(--ink) !important;}
+.audience__copy h2 span {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 2px 12px;
+    line-height: 1.1;
+    border-radius: 4px;
+}
+.audience__copy h2 span.highlight-white {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 2px 12px;
+    line-height: 1.1;
+    border-radius: 4px;
+}
 .hero h1{
     margin:24px 0 26px;
     font-family:"Space Grotesk",sans-serif;
@@ -117,8 +169,8 @@ button{font:inherit}
     border-radius:999px;
     font-weight:700;
 }
-.button--dark{background:var(--ink);color:#fff}
-.button--light{background:#fff;color:var(--ink)}
+.button--dark{background:var(--yellow);color: var(--ink)}
+.button--light{background:var(--yellow);color:var(--ink)}
 .hero__link{
     display:inline-flex;
     align-items:center;
@@ -170,22 +222,6 @@ button{font:inherit}
     position:absolute;
     border-radius:50%;
     filter:blur(.2px);
-}
-.hero__shape--lime{
-    width:350px;height:350px;
-    background:var(--lime);
-    left:-120px;top:110px;
-}
-.hero__shape--violet{
-    width:430px;height:430px;
-    background:var(--violet);
-    right:-160px;top:40%;
-    /* right:-220px;top:20px; */
-}
-.hero__shape--orange{
-    width:220px;height:220px;
-    background:var(--orange);
-    left:42%;bottom:60px;
 }
 .hero__ticker {
     position: relative;
@@ -288,8 +324,15 @@ button{font:inherit}
     place-items:center;
     width:52px;height:52px;
     border-radius:50%;
-    background:var(--lime);
     font-weight:800;
+}
+.step:nth-child(odd) > span {
+    background: var(--red);
+    color: #ffffff;
+}
+.step:nth-child(even) > span {
+    background: var(--ink);
+    color: #ffffff;
 }
 .step h3{
     margin:80px 0 16px;
@@ -387,9 +430,10 @@ button{font:inherit}
     border-radius:var(--radius-xl);
     overflow:hidden;
 }
-.audience--lime{background:var(--lime)}
-.audience--violet{background:var(--violet)}
-.audience--orange{background:var(--orange)}
+.audience--red{background:var(--red)}
+.audience--black{background:var(--ink)}
+.audience--white{background:var(--white); border: 2px solid #000000;}
+.audience__copy{color: #ffffff;}
 .audience__copy h2{
     margin:18px 0 22px;
     font-family:"Space Grotesk",sans-serif;
@@ -408,8 +452,14 @@ button{font:inherit}
     gap:8px;
     margin-top:28px;
     padding-bottom:5px;
-    border-bottom:1.5px solid var(--ink);
+    border-bottom:2px solid var(--white);
     font-weight:700;
+}
+.audience__copy .txt_bl{
+    border-bottom:2px solid var(--ink);
+}
+.copy_ult{
+    color: var(--ink) !important;
 }
 .audience__image{
     position:relative;
@@ -434,77 +484,96 @@ button{font:inherit}
     align-items:end;
     margin-bottom:50px;
 }
+.portfolio__head h2 span{
+    color: var(--red);
+}
 .portfolio__head p{
     max-width:450px;
     color:var(--muted);
     font-size:1.08rem;
     line-height:1.7;
 }
-.portfolio__grid{
-    display:grid;
-    grid-template-columns:1.45fr 1fr 1fr;
-    grid-template-rows:320px 250px;
-    gap:18px;
-}
-.project{
-    position:relative;
-    overflow:hidden;
-    border-radius:var(--radius-lg);
-    background:#ddd;
-}
-.project--large{grid-row:1/3}
-.project img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.45s ease;
-}
-.project:hover img{transform:scale(1.05)}
-.project__overlay{
-    position:absolute;inset:0;
-    background:linear-gradient(transparent 40%,rgba(0,0,0,.82));
-}
-.project__content{
-    position:absolute;
-    left:24px;bottom:22px;
-    z-index:2;color:#fff;
-}
-.project__content span{color:rgba(255,255,255,.72);font-size:.82rem}
-.project__content h3{margin-top:5px;font-size:1.6rem}
-.project>a{
-    position:absolute;
-    right:18px;bottom:18px;
-    z-index:3;
-    width:52px;height:52px;
-    display:grid;place-items:center;
-    border-radius:50%;
-    background:#fff;
-    font-size:1.35rem;
+
+.portfolio__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px 20px; /* 28px espacio vertical, 20px espacio horizontal */
 }
 
-.contact{
+/* Card individual (3 columnas) */
+.project {
+    display: flex;
+    flex-direction: column;
+    /* Calculamos 1/3 del ancho menos el espacio del gap */
+    flex: 1 1 calc(33.333% - 14px); 
+    box-sizing: border-box;
+}
+
+/* Contenedor de la imagen con bordes redondeados */
+.project__image {
+    width: 100%;
+    height: 240px; /* Ajusta la altura según tus imágenes */
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+
+.project__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project:hover .project__image img {
+    transform: scale(1.04);
+}
+
+/* Textos debajo de la tarjeta */
+.project__content {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.project__content span {
+    color: #888888;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.project__content h3 {
+    color: #111111;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* -------------- CONTACTO --------------- */
+
+.footer{
     position:relative;
     overflow:hidden;
     color:#fff;
     background-image: linear-gradient(rgb(0 0 0 / 61%), rgba(0, 0, 0, 0.5)), url(img/fondo_ng.png);
     background-size: cover;
     background-position: center;
+    border-radius: 120px 120px 0 0;
 }
-.contact__shape{
-    position:absolute;
-    width:600px;height:600px;
-    right:-180px;top:-180px;
-    border-radius:50%;
-    background:var(--red);
+.contact{
+    padding: 180px 0 50px;
 }
 .contact__inner{position:relative;z-index:2}
-.contact h2 span{display:block;color:var(--lime)}
+.contact h2 span{display:block;color:var(--white)}
 .contact__inner>p{
     max-width:620px;
     margin-top:28px;
-    color:rgba(255,255,255,.7);
+    color:white;
     font-size:1.15rem;
-    line-height:1.7;
+    line-height:1.2;
+    font-weight: 600;
 }
 .contact__actions{
     display:flex;
@@ -517,18 +586,15 @@ button{font:inherit}
     border-bottom:1px solid #fff;
     font-weight:700;
 }
-
-.footer{
-    padding:80px 0 28px;
-    color:#fff;
-    background:var(--ink);
-    border-top:1px solid rgba(255,255,255,.12);
-}
 .footer__top{
     display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:40px;
+    justify-content:right;
+    align-items:center;
+    gap:60px;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .footer__rg{
     display: flex;
@@ -602,13 +668,13 @@ button{font:inherit}
 .footer__bottom{
     display:flex;
     justify-content:space-between;
-    margin-top:60px;
-    padding-top:10px;
-    border-top:1px solid rgba(255,255,255,.12);
+    padding:20px;
     color:rgba(255,255,255,.55);
     font-size:.9rem;
 }
-
+.footer__bottom span:nth-child(2){
+    color: white;
+}
 .reveal{
     opacity:0;
     transform:translateY(28px);
