@@ -726,8 +726,7 @@ button{font:inherit}
     .circle-img { width: 120px;}
     .intro__img-wrapper{ top: -3%;}
     .statement__quote{ font-size: clamp(1rem, 3.8vw, 3.8rem);}
-        .statement__bg {
-        margin-top: 60px;
+    .statement__bg { margin-top: 60px;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px){
