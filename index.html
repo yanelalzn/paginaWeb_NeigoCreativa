@@ -36,6 +36,7 @@
             </button>
 
             <nav class="nav" id="nav">
+                <a href="index.html#inicio" class="active">Inicio</a>
                 <a href="#servicios">Servicios</a>
                 <a href="#proceso">Proceso</a>
                 <a href="#portafolio">Portafolio</a>
@@ -51,10 +52,6 @@
 
     <main>
         <section class="hero" id="inicio">
-            <div class="hero__shape hero__shape--lime"></div>
-            <div class="hero__shape hero__shape--violet"></div>
-            <div class="hero__shape hero__shape--orange"></div>
-
             <div class="hero__inner container">
                 <div class="hero__copy reveal">
                     <p class="eyebrow">Agencia creativa · Lima, Perú</p>
@@ -174,10 +171,10 @@
 
         <section class="audiences section">
             <div class="container">
-                <article class="audience audience--lime reveal">
+                <article class="audience audience--red reveal">
                     <div class="audience__copy">
-                        <span class="eyebrow eyebrow--dark">Para marcas</span>
-                        <h2>Ideas que se convierten en experiencias.</h2>
+                        <span class="eyebrow">Para marcas</span>
+                        <h2>Ideas que se convierten en <span>experiencias.</span></h2>
                         <p>
                             Branding, campañas y contenido para construir una marca
                             reconocible, cercana y consistente.
@@ -189,14 +186,14 @@
                     </div>
 
                     <div class="audience__image">
-                        <img src="img/trabajo_serv.jpg" alt="Proyecto de branding">
+                        <img src="img/serv_1.png" alt="Proyecto de branding">
                     </div>
                 </article>
 
-                <article class="audience audience--violet reveal">
+                <article class="audience audience--black reveal">
                     <div class="audience__copy">
-                        <span class="eyebrow eyebrow--dark">Para empresas</span>
-                        <h2>Experiencias digitales que trabajan por ti.</h2>
+                        <span class="eyebrow">Para empresas</span>
+                        <h2>Experiencias digitales que <span class="highlight-white">trabajan</span> por ti.</h2>
                         <p>
                             Páginas web, campañas y sistemas visuales diseñados
                             para informar, convencer y convertir.
@@ -212,15 +209,15 @@
                     </div>
                 </article>
 
-                <article class="audience audience--orange reveal">
-                    <div class="audience__copy">
-                        <span class="eyebrow eyebrow--dark">Para proyectos</span>
-                        <h2>Del concepto a la ejecución.</h2>
+                <article class="audience audience--white reveal">
+                    <div class="audience__copy copy_ult">
+                        <span class="eyebrow audience_bl">Para proyectos</span>
+                        <h2>Del concepto a la <span>realidad.</span></h2>
                         <p>
                             BTL, trade, outdoor e implementaciones para llevar
                             tu propuesta al espacio físico.
                         </p>
-                        <a href="#contacto">
+                        <a href="#contacto" class="txt_bl">
                             Conoce más
                             <i class="ri-arrow-right-line"></i>
                         </a>
@@ -238,7 +235,7 @@
                 <div class="portfolio__head reveal">
                     <div>
                         <span class="eyebrow eyebrow--dark">Proyectos destacados</span>
-                        <h2>Trabajo que habla por nosotros.</h2>
+                        <h2>Trabajo que <span>habla</span> por nosotros.</h2>
                     </div>
 
                     <p>
@@ -247,53 +244,79 @@
                     </p>
                 </div>
 
-                <div class="portfolio__grid">
-                    <article class="project project--large reveal">
-                        <img src="img/web-proj.jpg" alt="Proyecto Zago XR Labs">
-                        <div class="project__overlay"></div>
-                        <div class="project__content">
-                            <span>Branding · Web · Campaña</span>
-                            <h3>Zago XR Labs</h3>
+                <div class="portfolio__grid reveal">
+                    <!-- Card 1 -->
+                    <article class="project">
+                        <div class="project__image">
+                            <img src="img/web-proj.jpg" alt="Plataforma Digital Zanei Studio">
                         </div>
-                        <a href="#contacto"><i class="ri-arrow-right-up-line"></i></a>
+                        <div class="project__content">
+                            <span>Diseño Web & UX/UI</span>
+                            <h3>Plataforma Digital Zanei Studio</h3>
+                        </div>
                     </article>
 
-                    <article class="project reveal">
-                        <img src="img/trabajo_proj.jpg" alt="Proyecto de social media">
-                        <div class="project__overlay"></div>
-                        <div class="project__content">
-                            <span>Social Media · Contenido</span>
-                            <h3>Neiza Proyectos</h3>
+                    <!-- Card 2 -->
+                    <article class="project">
+                        <div class="project__image">
+                            <img src="img/trabajo_proj.jpg" alt="Identidad Corporativa Neiza Proyectos">
                         </div>
-                        <a href="#contacto"><i class="ri-arrow-right-up-line"></i></a>
+                        <div class="project__content">
+                            <span>Branding & Papelería Corporativa</span>
+                            <h3>Identidad Corporativa Neiza Proyectos</h3>
+                        </div>
                     </article>
 
-                    <article class="project reveal">
-                        <img src="img/ux-ui-proj.jpg" alt="Proyecto Box Plaza">
-                        <div class="project__overlay"></div>
-                        <div class="project__content">
-                            <span>UX/UI · Web</span>
-                            <h3>AsirisOchoa</h3>
+                    <!-- Card 3 -->
+                    <article class="project">
+                        <div class="project__image">
+                            <img src="img/ux-ui-proj.jpg" alt="Plataforma Digital Neiza Proyectos">
                         </div>
-                        <a href="#contacto"><i class="ri-arrow-right-up-line"></i></a>
+                        <div class="project__content">
+                            <span>Diseño Web & UX/UI</span>
+                            <h3>Plataforma Digital Neiza Proyectos</h3>
+                        </div>
                     </article>
 
-                    <article class="project reveal">
-                        <img src="img/trabajo1-proj.jpg" alt="Proyecto Mall Aventura">
-                        <div class="project__overlay"></div>
-                        <div class="project__content">
-                            <span>Branding · Identidad</span>
-                            <h3>Neiza Proyectos</h3>
+                    <!-- Card 4 -->
+                    <article class="project">
+                        <div class="project__image">
+                            <img src="img/trabajo1-proj.jpg" alt="Campaña Digital Zago VR-Experience">
                         </div>
-                        <a href="#contacto"><i class="ri-arrow-right-up-line"></i></a>
+                        <div class="project__content">
+                            <span>Social Media</span>
+                            <h3>Campaña Digital Zago VR-Experience</h3>
+                        </div>
+                    </article>
+
+                    <!-- Card 5 -->
+                    <article class="project">
+                        <div class="project__image">
+                            <img src="img/yanbal-proj.jpg" alt="Campaña de Captación Yanbal">
+                        </div>
+                        <div class="project__content">
+                            <span>Publicidad & Print</span>
+                            <h3>Campaña de Captación Yanbal</h3>
+                        </div>
+                    </article>
+
+                    <!-- Card 6 -->
+                    <article class="project">
+                        <div class="project__image">
+                            <img src="img/cantol-proj.jpg" alt="Spot Animado 3D Cantol Super 900">
+                        </div>
+                        <div class="project__content">
+                            <span>Video Animación & 3D</span>
+                            <h3>Spot Animado 3D Cantol Super 900</h3>
+                        </div>
                     </article>
                 </div>
             </div>
         </section>
+    </main>
 
+    <footer class="footer">
         <section class="contact section" id="contacto">
-            <div class="contact__shape"></div>
-
             <div class="contact__inner container reveal">
                 <span class="eyebrow eyebrow--light">Hablemos</span>
 
@@ -319,18 +342,8 @@
                 </div>
             </div>
         </section>
-    </main>
-
-    <footer class="footer">
         <div class="container">
             <div class="footer__top">
-                <div class="footer__rg">
-                    <a href="#inicio" class="footer__logo">
-                        <img src="img/logotipo.png" alt="Neigo Agencia">
-                    </a>
-                    <p>Creamos experiencias que conectan marcas con personas y generan resultados reales.</p>
-                </div>
-
                 <nav class="footer__nav">
                     <a href="#servicios">Servicios</a>
                     <a href="#proceso">Proceso</a>
